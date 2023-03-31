@@ -12,13 +12,31 @@
 
 <body>
 
-  <div class="input-container">
-    <input id="input" type="text" placeholder="Notiz schreiben...">
+  <h1>Keep It - Todo List</h1>
+
+  <div class="main-container">
+
+    <div class="sidebar">
+      <a href="#" onclick="" class="btn-trash"><img src="./img/icon-trash.png" alt=""> Mülleimer</a>
+    </div>
+
+    <div class="todo-container p20">
+      <div class="input-container p20">
+        <input id="input" class="input-field box01" type="text" placeholder="Notiz schreiben...">
+        <button class="btn-add" onclick="addTodo()">hinzufügen</button>
+      </div>
+
+      <div id="todo-list" class="todo-list p20">
+        <div class="todo-item box01">
+          My Todo
+          <br><br><button class="btn-delete">löschen</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <div class="todo-container">
-
-  </div>
+  <script src="script.js"></script>
 
 </body>
 
