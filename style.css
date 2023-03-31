@@ -1,0 +1,11 @@
+.input-container {
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  width: 400px;
+
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
