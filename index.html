@@ -22,10 +22,14 @@
     </div>
 
     <div class="todo-container p20">
-      <div class="input-container p20">
-        <input id="input" class="input-field box01" type="text" placeholder="Notiz schreiben...">
+      <form class="input-container p20" onsubmit="addTodo(); return false;">
+        <input required id="input" class="input-field box01" type="text" placeholder="Notiz schreiben...">
+        <button class="btn-add">hinzufügen</button>
+      </form>
+      <!-- <div class="input-container p20">
+        <input required id="input" class="input-field box01" type="text" placeholder="Notiz schreiben...">
         <button class="btn-add" onclick="addTodo()">hinzufügen</button>
-      </div>
+      </div> -->
 
       <div id="todo-list" class="todo-list p20">
         <div class="todo-item box01">

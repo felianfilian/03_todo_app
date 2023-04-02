@@ -9,6 +9,10 @@ body {
   font-size: 18px;
 }
 
+form {
+  display: flex;
+}
+
 .main-container {
   display: flex;
   flex-wrap: wrap;
