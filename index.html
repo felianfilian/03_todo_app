@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" href="./img/todo_fav.png">
 </head>
 
-<body>
+<body onload="getTodos('todoItems')">
 
   <h1>Keep It - Todo List</h1>
 
@@ -26,16 +26,9 @@
         <input required id="input" class="input-field box01" type="text" placeholder="Notiz schreiben...">
         <button class="btn-add">hinzufügen</button>
       </form>
-      <!-- <div class="input-container p20">
-        <input required id="input" class="input-field box01" type="text" placeholder="Notiz schreiben...">
-        <button class="btn-add" onclick="addTodo()">hinzufügen</button>
-      </div> -->
 
       <div id="todo-list" class="todo-list p20">
-        <div class="todo-item box01">
-          My Todo
-          <br><br><button class="btn-delete">löschen</button>
-        </div>
+        <!-- List of Todos -->
       </div>
     </div>
 

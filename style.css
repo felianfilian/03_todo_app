@@ -39,6 +39,8 @@ form {
   display: flex;
   align-items: center;
 
+  padding: 10px 0;
+
   color: #000;
   font-size: 24px;
   text-decoration: none;
@@ -135,6 +137,11 @@ form {
 
   .input-container {
     flex-wrap: wrap;
+  }
+
+  .todo-container {
+    max-width: unset;
+    width: 100%;
   }
 
   .btn-add {
