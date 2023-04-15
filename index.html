@@ -23,7 +23,12 @@
 
     <div class="todo-container p20">
       <form class="input-container p20" onsubmit="addTodo(); return false;">
-        <input required id="input" class="input-field box01" type="text" placeholder="Notiz schreiben...">
+
+        <div style="flex-direction: column;">
+          <input required id="input-title" class="input-field box01" type="text" placeholder="Titel"
+            style="margin-bottom: 10px;">
+          <input required id="input" class="input-field box01" type="text" placeholder="Notiz...">
+        </div>
         <button class="btn-add">hinzufügen</button>
       </form>
 

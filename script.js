@@ -10,7 +10,7 @@ function getTodos(key) {
   } else {
     noTodos();
   }
-  renderTodos(todoItems, "todo-list", "btn-delete", "löschen");
+  renderTodos(todoItems, "btn-delete", "löschen", "deleteTodo");
 }
 
 function setTodos(key, array) {
@@ -28,8 +28,8 @@ function noTodos() {
   `;
 }
 
-function renderTodos(todoArray, listElement, btnStyle, btnText) {
-  let todoList = document.getElementById(listElement);
+function renderTodos(todoArray, btnStyle, btnText, btnFunction) {
+  let todoList = document.getElementById("todo-list");
   todoList.innerHTML = "";
   if (todoArray.length <= 0) {
     noTodos();
@@ -39,17 +39,19 @@ function renderTodos(todoArray, listElement, btnStyle, btnText) {
     todoList.innerHTML += `
   <div class="todo-item box01">
   ${todoArray[i]}
-  <br><br><button class="${btnStyle}" onclick="deleteTodo(${i})">${btnText}</button>
+  <br><br><button class="${btnStyle}" onclick="${btnFunction}(${i})">${btnText}</button>
   </div>
   `;
   }
 }
 
+// button logic
+
 function addTodo() {
   let input = document.getElementById("input");
   todoItems.push(input.value);
   setTodos("todoItems", todoItems);
-  renderTodos(todoItems, "todo-list", "btn-delete", "löschen");
+  renderTodos(todoItems, "btn-delete", "löschen", "deleteTodo");
   input.value = "";
 }
 
@@ -57,20 +59,21 @@ function deleteTodo(index) {
   addToTrash(todoItems[index]);
   todoItems.splice(index, 1);
   setTodos("todoItems", todoItems);
-  renderTodos(todoItems, "todo-list", "btn-delete", "löschen");
+  renderTodos(todoItems, "btn-delete", "löschen", "deleteTodo");
 }
 
 // trash section
 
 function getTrash(key) {
   trashItems = JSON.parse(localStorage.getItem(key));
-  renderTodos(trashItems, "trash-list", "btn-add", "erneuern");
+  renderTodos(trashItems, "btn-add", "erneuern", "renewTodo");
 }
 
 function renewTodo(index) {
   todoItems.push(trashItems[index]);
   setTodos("todoItems", todoItems);
   trashItems.splice(index, 1);
+  setTodos("trashItems", trashItems);
   renderTrash();
 }
 

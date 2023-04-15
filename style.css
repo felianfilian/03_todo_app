@@ -107,9 +107,9 @@ form {
 /* todo item */
 
 .todo-item {
-  box-sizing: border-box;
-
   flex-grow: 1;
+
+  box-sizing: border-box;
 
   background-color: #fff;
   border: 2px solid #000;
